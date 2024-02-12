@@ -1,2 +1,7 @@
-.env 
+.env
+.http
+.rest
+print.py 
+poety.lock
+poety.toml
 *__pycache__
