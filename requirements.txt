@@ -1,5 +1,6 @@
 anyio==3.7.1 ; python_full_version == "3.9.7"
 asgiref==3.7.2 ; python_full_version == "3.9.7"
+bcrypt==3.2.0
 click==8.1.7 ; python_full_version == "3.9.7"
 colorama==0.4.6 ; python_full_version == "3.9.7" and platform_system == "Windows"
 dnspython==2.1.0 ; python_full_version == "3.9.7"
