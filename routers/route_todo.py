@@ -7,11 +7,10 @@ from starlette.status import HTTP_201_CREATED
 from typing import List
 from fastapi_csrf_protect import CsrfProtect
 from auth_utils import AuthJwtCsrf
-from schemas import SuccessMsg
-
 
 router = APIRouter()
 auth = AuthJwtCsrf()
+
 
 @router.post("/api/todo", response_model=Todo)
 async def create_todo(request: Request, response: Response, data: TodoBody,csrf_protect: CsrfProtect = Depends()):
@@ -60,7 +59,7 @@ async def update_todo(request: Request, response: Response,id: str,data: TodoBod
       raise HTTPException(
              status_code=404, detail="Update task failed" )
       
-@router.post("/api/todo/{id}",response_model=SuccessMsg)
+@router.delete("/api/todo/{id}",response_model=SuccessMsg)
 async def delete_todo(request: Request, response: Response, id: str, csrf_protect: CsrfProtect = Depends()):
       new_token = auth.verify_csrf_update_jwt(
         request, csrf_protect, request.headers)
